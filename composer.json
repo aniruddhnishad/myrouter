@@ -1,0 +1,27 @@
+{
+    "name": "aniruddh/myrouter",
+    "description": "A simple, lightweight, and PHP router with supported middleware, maintenance and rdirect to trailing slash or non-trailing slash mode.",
+    "keywords": ["router", "routing", "php router", "phprouter", "php route", "phproute", "phprouting", "php routing", "simple php router", "my php router"],
+    "homepage": "https://github.com/aniruddhnishad/myrouter",
+    "license": "MIT",
+    "authors": [
+       {
+          "name": "Aniruddh Nishad",
+          "email": "aniruddh@aniruddh.me",
+          "homepage": "https://aniruddh.me",
+          "role": "Creator/Developer"
+       }
+       
+    ],
+    "require": {
+       "php": ">=7.4.0"
+    },
+    "autoload": {
+       "psr-4": {
+          "Config\\Router\\": "src/"
+       }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+ }
+ 
