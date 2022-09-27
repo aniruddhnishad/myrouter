@@ -18,7 +18,7 @@
     },
     "autoload": {
        "psr-4": {
-          "Config\\Router\\": "src/"
+          "App\\Config\\": "src/"
        }
     },
     "minimum-stability": "dev",
