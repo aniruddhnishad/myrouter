@@ -150,10 +150,6 @@ class Router {
         return $this->routes[$method] ?? [];
     }
 
-    function index() {
-        echo "inside config router";
-    }
-
     function test() {
     
     }
