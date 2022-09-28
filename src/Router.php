@@ -38,20 +38,18 @@ class Router {
         $this->routes['OPTIONS'][] = [ $route, $callback, $options ];
     }
 
-    public function run() {
+    public function run($maintenance = false) {
         $url = $this->getUrl() == '' ? '/' : $this->getUrl();
         $method = $this->getMethod();
         $allRoutes = $this->getRouteUrl($method);
+        $this->maintenance = $maintenance;
         if(!empty($allRoutes)) {
             foreach( $allRoutes as $routes) {
                 $routes[0] = trim($routes[0], '/');
                 $routes[0] = $routes[0] == '' ? '/' : $routes[0];
-                if($this->callbackMaintenance) {
-                    $routes[0] = '.*';
-                    if(preg_match("#" . $routes[0] . "#i", $url)) {
-                        $this->maintenance();
-                        return;
-                    }
+                if($this->maintenance) {
+                   $this->maintenance();
+                   exit();
                 }
                 if( in_array($routes[0], $routes) && in_array($routes[1], $routes) && is_callable($routes[1]) ) {
                     if(preg_match("#" . $routes[0] . "#i", $url, $matches)) {

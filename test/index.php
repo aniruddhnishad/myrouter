@@ -1,6 +1,6 @@
 <?php
 
-include_once(__DIR__ . '/Router.php');
+include_once('path/to/autoload.php');
 
 use App\Config\Router;
 
@@ -25,8 +25,8 @@ $routes->post('/test', function() {
 echo "test post";
 });
 
-$routes->setMaintenance(function() {
-    echo "maintance page";
-});
+// $routes->setMaintenance(function() {
+//     echo "page";
+// });
 
 $routes->run();
